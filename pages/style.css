@@ -1,0 +1,388 @@
+/* *{
+    padding: 0px;
+    margin: 0px;
+} */
+nav {
+  position: fixed;
+  top: 4%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /*  top: 4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    very important for centering elements
+    along with margin auto and display flex with justify content and align items*/
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  z-index: 1; /*new*/
+  box-sizing: border-box;
+  backdrop-filter: blur(10px); /*new /cant stack methods*/
+  border-radius: 30px; /*to match the navbar so that the effect is identical*/ /*new*/
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: fit-content;
+  height: 53px;
+  background-color: rgba(243, 242, 241, 0.8);
+  border-radius: 30px;
+  /* transform: scale(0.8);affects the styling very important */ /*new*/
+  padding: 3px 3px 3px 6px; /*important for style*/
+
+  /* opacity: 0.9; not preferrable because it makes all items inside the div transparent aswell */
+}
+.navbar ul {
+  padding: 0px; /*very important for the shape of the original website*/
+  opacity: 1;
+}
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+  font-size: larger;
+  padding: 12px 30px 12px 30px;
+  border-radius: 30px;
+}
+#one {
+  background-color: #ffffff;
+}
+
+.navbar ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+.brand {
+  width: 50%;
+  line-height: 90px;
+  text-align: center;
+  text-wrap: pretty; /*new*/
+  margin: auto; /*important*/
+  margin-top: 130px;
+  font-size: 30px;
+  font-family: sans-serif;
+  margin-bottom: 0px;
+}
+.expertise {
+  width: fit-content;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+.expertise h5 {
+  font-weight: lighter;
+}
+.innerExpertise ul li {
+  display: inline;
+}
+.innerExpertise ul li a {
+  margin-left: 6px;
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+  font-size: smaller;
+  padding: 8px 15px 8px 15px;
+  border-radius: 30px;
+  background-color: #f3f2f1;
+  box-sizing: content-box;
+}
+
+.products {
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /*important for quick responsive*/
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin: auto;
+}
+.products img {
+  width: 650px;
+  height: 487px;
+  border-radius: 15px;
+  transition: all 0.5s;
+}
+.products img:hover {
+  filter: blur(1px); /*new*/
+}
+.test {
+  position: relative;
+}
+.overlay {
+  width: 100%;
+  height: 20%; /*very important otherwise will stick to each other*/ /*new*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  position: absolute; /*new*/ /*parent must be relative*/
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  transition: opacity 0.5s;
+  color: white;
+}
+.test:hover .overlay {
+  opacity: 1;
+  color: #ffffff;
+  font-size: larger;
+  font-family: sans-serif;
+}
+.icon {
+  color: black;
+  font-size: 1.2em;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 50%;
+}
+.icon1{
+  background-color: #f3f2f1;
+  opacity: 0;
+  transition: opacity 1s;
+  position:fixed;
+  bottom: 2%;
+  right: 2%;
+}
+.icon1.visible{
+  opacity: 1;
+}
+.moto {
+  width: fit-content;
+  margin: auto;
+  text-align: center;
+  margin-top: 130px;
+  font-size: 25px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+    sans-serif;
+  /*testing fade in*/
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.moto.visible {
+  /*new and very important , javaScript is adding this class t0 .moto later on to apply the opacity once the user has scrolled enough*/
+  opacity: 1;
+}
+.moto h2 {
+  margin: 0px;
+}
+.moto a {
+  margin-top: 0px;
+  text-decoration: none;
+  color: #7f7f7f;
+  font-size: 1.5em;
+}
+footer {
+  margin-top: 100px;
+  padding: 20px 50px 20px 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+footer .logo {
+  display: flex;
+  align-items: center; /* important*/
+}
+.logo h5 {
+  margin-left: 10px;
+}
+.social {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.social a {
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+  margin-left: 20px;
+} /*styling profile page*/
+.brand2 {
+  height: 400px;
+  margin-top: 300px;
+}
+.about {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 400px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.about.visible {
+  opacity: 1;
+}
+.about h5 {
+  margin-left: 6px;
+  text-decoration: none;
+  color: black;
+  font-family: sans-serif;
+  font-size: smaller;
+  padding: 8px 15px 8px 15px;
+  border-radius: 30px;
+  background-color: #f3f2f1;
+  box-sizing: content-box;
+}
+.about p {
+  width: 50%;
+  line-height: 90px;
+  text-align: center;
+  text-wrap: pretty; /*new*/
+  font-weight: 600;
+  font-size: 30px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  margin-bottom: 0px;
+}
+.moto1 {
+  width: 100%;
+  margin: 500px 0px;
+}
+/*testing responsive design*/ /*popular breakpoints*/
+/* Extra small devices (phones, less than 576px) */
+@media screen and (max-width: 599.98px) {
+  /* body{
+        background-color: aqua;
+    } */
+  .brand {
+    width: 100%;
+    font-size: 20px;
+  }
+
+  .products img {
+    width: 400px;
+    height: 300px;
+  }
+  .navbar ul li a {
+    padding: 10px 12px 6px 12px;
+    font-size: 9px;
+  }
+  .navbar {
+    vertical-align: middle;
+    padding: 5px;
+    height: 25px;
+  }
+  .about p {
+    width: 100%;
+    text-wrap: balance;
+    font-size: 25px;
+  }
+}
+
+/* Small devices (phones, 576px and up) */
+@media screen and (min-width: 600px) and (max-width: 767.98px) {
+  /* body{
+        background-color: aqua;
+    } */
+
+  .brand {
+    width: 80%;
+    font-size: 20px;
+  }
+
+  .products img {
+    width: 500px;
+    height: 375px;
+  }
+  .navbar ul li a {
+    padding: 12px 25px 8px 25px;
+    font-size: 10px;
+  }
+  .navbar {
+    height: 35px;
+  }
+  .about p {
+    width: 96%;
+    text-wrap: balance;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  /* body{
+        background-color: aqua;
+    } */
+
+  .brand {
+    width: 60%;
+    font-size: 20px;
+  }
+
+  .products img {
+    width: 500px;
+    height: 375px;
+  }
+  .navbar ul li a {
+    padding: 10px 28px;
+    font-size: 15px;
+  }
+  .navbar {
+    height: 45px;
+  }
+  .about p {
+    width: 80%;
+    text-wrap: balance;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
+  /* body{
+        background-color: aqua;
+    } */
+  .brand {
+    width: 46%;
+    font-size: 20px;
+  }
+
+  .products img {
+    width: 450px;
+    height: 337.5px;
+  }
+  .navbar ul li a {
+    padding: 10px 28px;
+    font-size: 15px;
+  }
+  .navbar {
+    height: 45px;
+  }
+  .about p {
+    width: 58%;
+    text-wrap: balance;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (min-width: 1200px) and (max-width: 1535px) {
+  /* body{
+        background-color: aqua;
+    } */
+  .brand {
+    width: 38%;
+    font-size: 20px;
+  }
+
+  .products img {
+    width: 500px;
+    height: 375px;
+  }
+
+  .about p {
+    width: 46%;
+    text-wrap: balance;
+  }
+}
