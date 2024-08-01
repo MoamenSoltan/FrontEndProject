@@ -58,7 +58,7 @@ window.addEventListener('scroll',handlingScroll)
 
 let icon=document.querySelector('.icon1')
 function iconScroll(){
-    if(scrollY>300){
+    if(scrollY>100){
         icon.classList.add('visible')
     }
     else{
@@ -66,6 +66,7 @@ function iconScroll(){
     }
 }
 function backToTop(){
+    event.preventDefault();//very important //to disable the # effect which would change the animation
     window.scrollTo({
         top : 0,
         behavior:"smooth"
